@@ -1,0 +1,28 @@
+.container {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgrey;
+  margin: 0.2rem;
+  list-style: none;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.container:hover {
+  transform: scale(1.04);
+}
+
+.thumbnail {
+  width: 40%;
+}
+.title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.channel {
+  font-size: 12px;
+}
+.title,
+.channel {
+  margin: 0.2rem;
+}
