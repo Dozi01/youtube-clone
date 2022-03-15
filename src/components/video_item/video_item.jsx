@@ -5,7 +5,11 @@ function VideoItem(props) {
   console.log(video);
   return (
     <li className={styles.container}>
-      <img className={styles.thumbnail} src={video.thumbnails.medium.url} />
+      <img
+        className={styles.thumbnail}
+        src={video.thumbnails.medium.url}
+        alt="thumbnail"
+      />
       <div>
         <div className={styles.title}>{video.title}</div>
         <div className={styles.channel}>{video.channelTitle}</div>

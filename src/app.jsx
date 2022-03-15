@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./app.module.css";
+import Header from "./components/header/header";
 import VideoList from "./components/video_list/video_list";
 
 function App() {
@@ -20,7 +21,12 @@ function App() {
     getVideos();
   }, []);
 
-  return <VideoList videos={videos} />;
+  return (
+    <div>
+      <Header />
+      <VideoList videos={videos} />
+    </div>
+  );
 }
 
 export default App;

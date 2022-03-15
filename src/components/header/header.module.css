@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 7.5px 16px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.title {
+  margin-left: 8px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.youtubeIcon {
+  color: red;
+  font-size: 32px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+.input {
+  width: 80%;
+  height: 40px;
+}
+.button {
+  font-size: 18px;
+  height: 40px;
+  width: 64px;
+}
