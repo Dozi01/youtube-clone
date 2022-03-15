@@ -1,33 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import styles from "./header.module.css";
 
 function Header() {
+  const [value, setValue] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setValue("");
+    console.log("submitted!");
+  };
+
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <div className={styles.logo}>
         <FontAwesomeIcon className={styles.youtubeIcon} icon={faYoutube} />
-        <div className={styles.title}>Youtube</div>
+        <h1 className={styles.title}>Youtube</h1>
       </div>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.input}
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
           // ref={this.inputRef}
-          type="text"
-          placeholder="Search"
-          id="name"
-          name="name"
+          type="search"
+          placeholder="Search..."
+          id="search"
         />
-        <button className={styles.button}>
+        <button type="submit" className={styles.button}>
           <FontAwesomeIcon
             className={styles.searchIcon}
             icon={faMagnifyingGlass}
           />
         </button>
       </form>
-    </div>
+    </header>
   );
 }
 
