@@ -1,9 +1,10 @@
 import "./app.css";
+import Video from "./components/video";
 
 function App() {
   return (
     <div>
-      <h1>hi</h1>
+      <Video />
     </div>
   );
 }
