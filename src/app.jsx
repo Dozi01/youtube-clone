@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./app.module.css";
+import styles from "./app.module.css";
 import Header from "./components/header/header";
 import VideoList from "./components/video_list/video_list";
 
@@ -17,13 +17,27 @@ function App() {
     setLoading(false);
   };
 
+  const search = (query) => {
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&type=video&q=${query}&key=AIzaSyCqenmgGnN_EMT9RztOd3N5UqCbk5vZCbI`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => setVideos(result.items))
+      .catch((error) => console.log("error", error));
+  };
+
   useEffect(() => {
     getVideos();
   }, []);
-
   return (
-    <div>
-      <Header />
+    <div className={styles.container}>
+      <Header search={search} />
       <VideoList videos={videos} />
     </div>
   );

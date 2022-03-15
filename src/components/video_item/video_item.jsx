@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./video_item.module.css";
 function VideoItem(props) {
   const video = props.video.snippet;
-  console.log(video);
   return (
     <li className={styles.container}>
       <img

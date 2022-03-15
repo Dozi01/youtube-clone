@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import styles from "./header.module.css";
 
-function Header() {
-  const [value, setValue] = useState("");
-
+function Header(props) {
+  const inputRef = useRef();
   const handleSubmit = (event) => {
     event.preventDefault();
-    setValue("");
-    console.log("submitted!");
+    props.search(inputRef.current.value);
   };
 
   return (
@@ -22,11 +20,7 @@ function Header() {
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.input}
-          value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-          // ref={this.inputRef}
+          ref={inputRef}
           type="search"
           placeholder="Search..."
           id="search"
