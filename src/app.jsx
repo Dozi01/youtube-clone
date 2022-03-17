@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styles from "./app.module.css";
 import Header from "./components/header/header";
 import VideoList from "./components/video_list/video_list";
-import Youtube from "./service/youtube";
 
 function App({ youtube }) {
   const [videos, setVideos] = useState([]);
